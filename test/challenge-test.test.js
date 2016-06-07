@@ -1,5 +1,5 @@
-const expect = require("chai").expect
-const lib = require("../src/challenge")
+const expect = require("chai").expect;
+const lib = require("../src/challenge");
 
 const rawData = {
   "people": [
@@ -52,7 +52,7 @@ const rawData = {
   ]
 }
 
-describe("#companies", () => {
+describe.only("#companies", () => {
 
   it("returns an array of companies and their employees", () => {
     const expectedOutput = [
@@ -85,12 +85,12 @@ describe("#companies", () => {
             "first_name": "Elise",
             "last_name": "Camylle",
             "title": "Internal Mobility Executive"
-          },
+          }
         ]
       }
     ]
 
-    expect(lib.companies(rawData)).to.deep.equal(expectedOutput)
+    expect(lib.createCompanyData(rawData)).to.deep.equal(expectedOutput)
   })
 
 })
